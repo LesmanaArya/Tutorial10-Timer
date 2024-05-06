@@ -1,0 +1,4 @@
+## 1.2. Understanding how it works.
+Berikut adalah hasil dari modifikasi `Try to add another print just after the spawn` : <br>
+![output ss](img/ss_1.png) <br>
+Perintah dari ```    println!("Arya's Computer: hey hey");``` akan dieksekusi terlebih dahulu karena ia tidak masuk di dalam ```spawner.spawn``` yang berarti ia tidak akan menunggu fungsi asynchronus ```async``` dijalankan terlebih dahulu melainkan akan langsung dijalankan saja. Setelah itu baru perintah async yang ada di dalam spawner dieksekusi, yang mana pertama-tama akan menjalankan ```println!("Arya's Computer: howdy!");``` kemudian terdapat delay 2 detik sebelum menjalankan perintah ```        println!("Arya's Computer: done!");``` sehingga urutan outputnya adalah demikian
